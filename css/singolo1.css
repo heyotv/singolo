@@ -76,7 +76,7 @@ html {
   border-radius: 50%;
 }
 
-.navigation-item-selected > a {
+.navigation-item > a:focus {
   color: #f06c64;
 }
 
