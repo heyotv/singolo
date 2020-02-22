@@ -85,3 +85,44 @@ html {
   text-decoration: underline;
   color: #f06c64;
 }
+
+.slider {
+  height: 600px;
+  box-sizing: border-box;
+  background-color: #f06c64;
+  border-bottom: solid 6px #ea676b;
+}
+
+.slider-content {
+  position: relative;
+}
+
+.previous-arrow {
+  position: absolute;
+  left: 42px;
+  top: 281px;
+}
+
+.next-arrow {
+  position: absolute;
+  right: 40px;
+  top: 281px;
+}
+
+.previous-arrow:hover,
+.next-arrow:hover {
+  cursor: pointer;
+  transform: scale(1.2);
+}
+
+.vertical-phone {
+  position: absolute;
+  left: 112px;
+  top: 53px;
+}
+
+.horizontal-phone {
+  position: absolute;
+  right: 111px;
+  top: 174px;
+}
