@@ -1,0 +1,104 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  font-size: 10px;
+}
+
+.wrapper {
+  max-width: 1020px;
+  padding: 0 40px;
+  margin: 0 auto;
+  box-sizing: border-box;
+}
+
+.contacts {
+  padding-top: 67px;
+  background-color: #f06c64;
+  border-bottom: 6px solid #ea676b;
+  color: #f0d8d9;
+}
+
+.contacts h2 {
+  padding-left: 0.5px;
+  font-family: "LatoBlack";
+  font-size: 3rem;
+  line-height: 1.8rem;
+  letter-spacing: -0.02rem;
+}
+
+.contacts p {
+  margin-top: 27px;
+  padding-left: 0.5px;
+  text-align: justify;
+  font-family: "LatoLight";
+  font-size: 1.8rem;
+  line-height: 3rem;
+}
+
+.contact-form {
+  margin-top: 44px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.form-field {
+  width: 619px;
+  padding: 11px 15px 12px;
+  margin-bottom: 16px;
+  background-color: #d6564f;
+  border: none;
+  border-radius: 5px;
+  box-sizing: border-box;
+}
+
+.form-field:last-child {
+  padding: 7px 15px 0;
+  resize: none;
+}
+
+.form-field::placeholder {
+  font-family: "LatoRegular";
+  font-size: 1.2rem;
+  line-height: 2.2rem;
+  color: #f48c8f;
+}
+
+form {
+  width: 100%;
+  margin-right: 20px;
+}
+
+.form-info h3 {
+  padding-left: 1.5px;
+  letter-spacing: -0.01rem;
+  font-family: "LatoBlack";
+  font-size: 1.8rem;
+  line-height: 1.8rem;
+}
+
+.form-info p {
+  padding-left: 1.5px;
+  margin-top: 10px;
+  text-align: justify;
+  word-spacing: -0.1rem;
+  letter-spacing: -0.013rem;
+  font-family: "LatoRegular";
+  font-size: 1.2rem;
+  line-height: 2.2rem;
+}
+
+.contact, a {
+  display: block;
+}
+
+a {
+  text-decoration: none;
+  color: #f0d8d9;
+}
+
+.form-info p:last-child {
+  margin-top: 20px;
+}
