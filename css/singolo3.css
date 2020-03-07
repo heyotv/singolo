@@ -15,7 +15,8 @@ html {
 }
 
 .contacts {
-  padding-top: 67px;
+  padding-top: 68px;
+  padding-bottom: 12px;
   background-color: #f06c64;
   border-bottom: 6px solid #ea676b;
   color: #f0d8d9;
@@ -46,17 +47,32 @@ html {
 
 .form-field {
   width: 619px;
-  padding: 11px 15px 12px;
-  margin-bottom: 16px;
+  padding: 9px 15px 11px;
   background-color: #d6564f;
   border: none;
   border-radius: 5px;
   box-sizing: border-box;
+  color: #f0d8d9;
+  font-family: "LatoRegular";
+}
+
+.form-field:not(:last-child) {
+  margin-bottom: 16px;
+  outline: none;
 }
 
 .form-field:last-child {
+  outline-color: #f0d8d9;
+}
+
+.form-field:nth-child(4) {
+  height: 202px;
   padding: 7px 15px 0;
   resize: none;
+}
+
+.form-field:not(:nth-child(4)) {
+  height: 38px;
 }
 
 .form-field::placeholder {
@@ -64,6 +80,10 @@ html {
   font-size: 1.2rem;
   line-height: 2.2rem;
   color: #f48c8f;
+}
+
+.form-field:invalid:not(:placeholder-shown) {
+  box-shadow: 0 0 10px red;
 }
 
 form {
