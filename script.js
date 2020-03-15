@@ -5,11 +5,14 @@ window.onload = function() {
   addSliderSwitchingClickHandler();
 
   switchPhonesScreen();
+
+  addTagsClickHandler();
 }
 
 const addMenuClickHandler = () => {
   const menu = document.querySelector('.navigation-list'),
     items = menu.querySelectorAll('a');
+
   menu.addEventListener('click', (event) => {
     items.forEach(item => item.classList.remove('navigation-item-selected'));
     event.target.classList.add('navigation-item-selected');
@@ -153,4 +156,36 @@ const switchPhonesScreen = () => {
       }
     }
   });
+}
+
+const addTagsClickHandler = () => {
+  const tagsWrapper = document.querySelector('.portfolio-tags'),
+    tags = document.querySelectorAll('.tag');
+
+  tagsWrapper.addEventListener('click', (event) => {
+    if (!event.target.classList.contains('tag-selected') && event.target.classList.contains('tag')) {
+      tags.forEach(tag => tag.classList.remove('tag-selected'));
+      event.target.classList.add('tag-selected');
+      shufflePictures();
+    }
+  });
+}
+
+const shufflePictures = () => {
+  const portfolioPicturesWrapper = document.querySelector('.portfolio-pictures'),
+    pictures = portfolioPicturesWrapper.querySelectorAll('.portfolio-picture');
+
+  let picturesArr = Array.from(pictures);
+  shuffle(picturesArr);
+
+  portfolioPicturesWrapper.innerHTML = '';
+  picturesArr.forEach(picture => portfolioPicturesWrapper.append(picture));
+}
+
+const shuffle = (arr) => {
+  for (let i = arr.length - 1; i > 0; i--) {
+    const j = Math.floor(Math.random() * (i + 1));
+    [arr[i], arr[j]] = [arr[j], arr[i]];
+  }
+  return arr;
 }
