@@ -92,22 +92,71 @@ html {
   box-sizing: border-box;
   background-color: #f06c64;
   border-bottom: solid 6px #ea676b;
+  transition: 2s;
 }
 
-.slider-wrapper {
+.slider-click-color {
+  transition: 2s;
+  border-bottom: solid 6px #6884d0;
+  background-color: #648bf0;
+}
+
+.slider-wrapper,
+.slider-content,
+.slide-1,
+.slide-2 {
   position: relative;
+}
+
+.slider-content {
+  height: 600px;
+  overflow: hidden;
+}
+
+.slide-1,
+.slide-2 {
+  transition: 2s;
+  opacity: 1;
+}
+
+.slide-1 {
+  right: 0;
+  left: 0;
+}
+
+.slide-2 {
+  left: 0;
+  right: 0;
+  display: none;
+}
+
+.slide-to-the-left {
+  transition: 2s;
+  opacity: 0;
+  left: -1000px;
+}
+.slide-to-the-right {
+  transition: 2s;
+  opacity: 0;
+  left: 1000px;
+}
+
+.display-hidden {
+  display: none;
 }
 
 .previous-arrow {
   position: absolute;
   left: 2px;
   top: 281px;
+  z-index: 100;
 }
 
 .next-arrow {
   position: absolute;
   right: 0;
   top: 281px;
+  z-index: 100;
 }
 
 .previous-arrow:hover,
@@ -126,6 +175,12 @@ html {
   position: absolute;
   right: 71px;
   top: 174px;
+}
+
+.some-phones {
+  position: absolute;
+  top: 48px;
+  left: 204px;
 }
 
 .services {
