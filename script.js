@@ -7,6 +7,8 @@ window.onload = function() {
   switchPhonesScreen();
 
   addTagsClickHandler();
+
+  addPortfolioPicturesClickHandler();
 }
 
 const addMenuClickHandler = () => {
@@ -188,4 +190,16 @@ const shuffle = (arr) => {
     [arr[i], arr[j]] = [arr[j], arr[i]];
   }
   return arr;
+}
+
+const addPortfolioPicturesClickHandler = () => {
+  const portfolioPicturesWrapper = document.querySelector('.portfolio-pictures'),
+    pictures = portfolioPicturesWrapper.querySelectorAll('.portfolio-picture');
+  
+  portfolioPicturesWrapper.addEventListener('click', (event) => {
+    if (event.target.classList.contains('portfolio-picture')) {
+      pictures.forEach(picture => picture.classList.remove('picture-selected'));
+      event.target.classList.add('picture-selected');
+    }
+  });
 }
