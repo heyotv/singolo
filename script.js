@@ -3,6 +3,8 @@ window.onload = function() {
   addMenuClickHandler();
 
   addSliderSwitchingClickHandler();
+
+  switchPhonesScreen();
 }
 
 const addMenuClickHandler = () => {
@@ -118,5 +120,37 @@ const addSliderSwitchingClickHandler = () => {
       now--;
     }
 
+  });
+}
+
+const switchPhonesScreen = () => {
+  const phone1 = document.querySelector('.vertical-phone'),
+    phone2 = document.querySelector('.horizontal-phone'),
+    sliderContent = document.querySelector('.slide-1');
+
+  sliderContent.addEventListener('click', (event) => {
+
+    let verticalPhoneScreenOff = document.querySelector('.vertical-phone-screen-off'),
+      horizontalPhoneScreenOff = document.querySelector('.horizontal-phone-screen-off');
+
+    if (event.target == phone1) {
+      if (verticalPhoneScreenOff) {
+        verticalPhoneScreenOff.remove();
+      } else {
+        let div = document.createElement('div');
+        div.classList.add('vertical-phone-screen-off');
+        sliderContent.append(div);
+      }
+    }
+
+    if (event.target == phone2) {
+      if (horizontalPhoneScreenOff) {
+        horizontalPhoneScreenOff.remove();
+      } else {
+        let div = document.createElement('div');
+        div.classList.add('horizontal-phone-screen-off');
+        sliderContent.append(div);
+      }
+    }
   });
 }

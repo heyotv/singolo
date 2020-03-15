@@ -183,6 +183,24 @@ html {
   left: 204px;
 }
 
+.vertical-phone-screen-off {
+  width: 194px;
+  height: 339px;
+  background-color: black;
+  position: absolute;
+  left: 83px;
+  top: 115px;
+}
+
+.horizontal-phone-screen-off {
+  width: 339px;
+  height: 194px;
+  background-color: black;
+  position: absolute;
+  right: 159px;
+  top: 185px;
+}
+
 .services {
   height: 500px;
   box-sizing: border-box;
