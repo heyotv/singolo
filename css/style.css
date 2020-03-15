@@ -5,6 +5,7 @@
 
 html {
   font-size: 10px;
+  scroll-behavior: smooth;
 }
 
 .wrapper {
@@ -77,12 +78,12 @@ html {
   border-radius: 50%;
 }
 
-.navigation-item > a:focus {
+.navigation-item:hover {
+  text-decoration: underline;
   color: #f06c64;
 }
 
-.navigation-item > a:hover {
-  text-decoration: underline;
+.navigation-list .navigation-item-selected {
   color: #f06c64;
 }
 
