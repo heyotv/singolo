@@ -9,6 +9,8 @@ window.onload = function() {
   addTagsClickHandler();
 
   addPortfolioPicturesClickHandler();
+
+  addFormButtonClickHandler();
 }
 
 const addMenuClickHandler = () => {
@@ -202,4 +204,66 @@ const addPortfolioPicturesClickHandler = () => {
       event.target.classList.add('picture-selected');
     }
   });
+}
+
+const addFormButtonClickHandler = () => {
+  const button = document.getElementById('button');
+  const fields = document.querySelectorAll('.form-field');
+
+  button.addEventListener('click', (event) => {
+    let fieldsArr = Array.from(fields);
+    if (checkInputValidation(fieldsArr)) {
+      event.preventDefault();
+      openModal();
+    }
+  });
+}
+
+const checkInputValidation = (arr) => {
+  return arr.every(item => item.checkValidity());
+}
+
+const openModal = () => {
+  const overlay = document.createElement('div'),
+    modal = document.createElement('div');
+
+  modal.classList.add('modal');
+  addModalContent(modal);
+  cleanInputs();
+  overlay.classList.add('modal-overlay');
+  overlay.append(modal);
+  document.body.append(overlay);
+  addCloseModalClickHandler();
+}
+
+const addModalContent = (modal) => {
+  const form = document.querySelector('form'),
+    input = form.querySelectorAll('input')[2],
+    textarea = form.querySelector('textarea');
+
+  let subject = (input.value) ? `Тема: ${input.value}` : `Без темы`,
+    describe = (textarea.value) ? `Описание: ${textarea.value}` : `Без описания`;
+
+  modal.innerHTML += `<p>Письмо отправлено</p><p>${subject}</p><p>${describe}</p><button id="close-modal">Ок</button>`;
+}
+
+const cleanInputs = () => {
+  const form = document.querySelector('form'),
+    inputs = form.querySelectorAll('input'),
+    textarea = form.querySelector('textarea');
+
+  inputs.forEach(input => input.value = '');
+  textarea.value = '';
+}
+
+const addCloseModalClickHandler = () => {
+  const closeButton = document.getElementById('close-modal'),
+    overlay = document.querySelector('.modal-overlay');
+
+  closeButton.addEventListener('click', (event) => {
+    event.preventDefault();
+    overlay.remove();
+  })
+
+
 }
