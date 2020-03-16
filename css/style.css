@@ -339,12 +339,14 @@ html {
 
 .portfolio-picture {
   margin-bottom: 20px;
+  cursor: pointer;
 }
 
 .picture-selected {
   transition: 0.3s;
   box-sizing: border-box;
   border: 5px solid #f06c64;
+  cursor: initial;
 }
 
 .about-us {

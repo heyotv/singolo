@@ -241,10 +241,10 @@ const addModalContent = (modal) => {
     input = form.querySelectorAll('input')[2],
     textarea = form.querySelector('textarea');
 
-  let subject = (input.value) ? `Тема: ${input.value}` : `Без темы`,
-    describe = (textarea.value) ? `Описание: ${textarea.value}` : `Без описания`;
+  let subject = (input.value) ? `Subject: ${input.value}` : `Without subject`,
+    describe = (textarea.value) ? `Description: ${textarea.value}` : `Without description`;
 
-  modal.innerHTML += `<p>Письмо отправлено</p><p>${subject}</p><p>${describe}</p><button id="close-modal">Ок</button>`;
+  modal.innerHTML += `<p>The letter was sent</p><p>${subject}</p><p>${describe}</p><button id="close-modal">Ок</button>`;
 }
 
 const cleanInputs = () => {
