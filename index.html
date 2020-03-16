@@ -16,11 +16,11 @@
         </a>
         <nav class="navigation">
           <ul class="navigation-list">
-            <li class="navigation-item navigation-item-selected"><a href="#">Home</a></li>
-            <li class="navigation-item"><a href="#">Services</a></li>
-            <li class="navigation-item"><a href="# ">Portfolio</a></li>
-            <li class="navigation-item"><a href="#">About</a></li>
-            <li class="navigation-item"><a href="#">Contact</a></li>
+            <li class="navigation-item navigation-item-selected"><a href="#home">Home</a></li>
+            <li class="navigation-item"><a href="#services">Services</a></li>
+            <li class="navigation-item"><a href="#portfolio">Portfolio</a></li>
+            <li class="navigation-item"><a href="#about">About</a></li>
+            <li class="navigation-item"><a href="#contact">Contact</a></li>
           </ul>
         </nav>
       </div>
@@ -31,14 +31,20 @@
       <div class="slider-wrapper">
         <img class="previous-arrow" src="assets/images/previous-arrow.svg" alt="previous">
         <div class="slider-content">
-          <img class="vertical-phone" src="assets/images/vertical-phone.png" alt="vertical-phone">
-          <img class="horizontal-phone" src="assets/images/horizontal-phone.png" alt="horizontal-phone">
+          <div class="slide slide-1">
+            <img class="vertical-phone" src="assets/images/vertical-phone.png" alt="vertical-phone">
+            <img class="horizontal-phone" src="assets/images/horizontal-phone.png" alt="horizontal-phone">
+          </div>
+          <div class="slide slide-2">
+            <img class="some-phones" src="assets/images/some-phones.png" alt="some-phones">
+          </div>
         </div>
         <img class="next-arrow" src="assets/images/next-arrow.svg" alt="next">
       </div>
     </div>
   </section>
   <section class="services">
+    <a name="services"></a>
     <div class="wrapper">
       <div class="services-wrapper">
         <h2 class="services-title">Our Services</h2>
@@ -102,6 +108,7 @@
     </div>
   </section>
   <section class="portfolio">
+    <a name="portfolio"></a>
     <div class="wrapper">
       <h2>Portfolio</h2>
       <p>Duis mollis, est non commodo luctus, nisi erat porttitor ligula, eget lacinia odio sem nec elit.</p>
@@ -140,6 +147,7 @@
     </div>
   </section>
   <section class="about-us">
+    <a name="about"></a>
     <div class="wrapper">
       <h2>About Us</h2>
       <p>Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum. Duis mollis, non commodo luctus, nisi erat
@@ -186,6 +194,7 @@
     </div>
   </section>
   <section class="contacts">
+    <a name="contact"></a>
     <div class="wrapper">
       <h2>Get a Quote</h2>
       <p>Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum. Duis mollis, non commodo luctus, nisi erat
@@ -199,7 +208,7 @@
           <input class="form-field" type="text" name="subject" placeholder="Subject">
           <textarea class="form-field" name="description" placeholder="Describe your project in detail..." cols="30"
             rows="13"></textarea>
-          <button class="form-field" type="submit">Submit</button>
+          <button id="button" class="form-field" type="submit">Submit</button>
         </form>
         <div class="form-info">
           <h3>Contact Information</h3>
@@ -237,5 +246,6 @@
       </div>
     </div>
   </footer>
+  <script src="script.js"></script>
 </body>
 </html>
