@@ -1,6 +1,6 @@
 window.onload = function() {
 
-  addMenuClickHandler();
+  addMenuScrollHandler();
 
   addSliderSwitchingClickHandler();
 
@@ -13,14 +13,26 @@ window.onload = function() {
   addFormButtonClickHandler();
 }
 
-const addMenuClickHandler = () => {
-  const menu = document.querySelector('.navigation-list'),
-    items = menu.querySelectorAll('a');
+const addMenuScrollHandler = () => {
 
-  menu.addEventListener('click', (event) => {
-    items.forEach(item => item.classList.remove('navigation-item-selected'));
-    event.target.classList.add('navigation-item-selected');
-  });
+  const onScroll = () => {
+    const cursorPosition = window.scrollY,
+      sections = document.querySelectorAll('section'),
+      links = document.querySelectorAll('.navigation-list a');
+
+    sections.forEach(((item) => {
+      if (cursorPosition == 2581 || (item.offsetTop <= cursorPosition && (item.offsetTop + item.offsetHeight) > cursorPosition)) {
+        links.forEach((a) => {
+          a.classList.remove('navigation-item-selected');
+          if (item.getAttribute('id') === a.getAttribute('href').substring(1)) {
+            a.classList.add('navigation-item-selected');
+          }
+        })
+      }
+    }))
+  }
+
+  document.addEventListener('scroll', onScroll);
 }
 
 const addSliderSwitchingClickHandler = () => {
@@ -158,6 +170,14 @@ const switchPhonesScreen = () => {
         div.classList.add('horizontal-phone-screen-off');
         sliderContent.append(div);
       }
+    }
+
+    if (event.target == verticalPhoneScreenOff) {
+      verticalPhoneScreenOff.remove();
+    }
+
+    if (event.target == horizontalPhoneScreenOff) {
+      horizontalPhoneScreenOff.remove();
     }
   });
 }

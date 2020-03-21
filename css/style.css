@@ -17,6 +17,10 @@ html {
 
 .header {
   height: 95px;
+  width: 100%;
+  position: sticky;
+  top: 0;
+  z-index: 2;
   box-sizing: border-box;
   background-color: #2d303a;
   border-bottom: 6px solid #323746;
@@ -149,14 +153,14 @@ html {
   position: absolute;
   left: 2px;
   top: 281px;
-  z-index: 100;
+  z-index: 1;
 }
 
 .next-arrow {
   position: absolute;
   right: 0;
   top: 281px;
-  z-index: 100;
+  z-index: 1;
 }
 
 .previous-arrow:hover,
@@ -319,13 +323,17 @@ html {
   color: #767e9e;
   border: 1px solid #767e9e;
   border-radius: 5px;
+  cursor: pointer;
 }
 
 .portfolio .tag:hover,
 .portfolio .tag-selected {
   color: #dedede;
   border: 1px solid #dedede;
-  cursor: pointer;
+}
+
+.portfolio .tag-selected {
+  cursor: default;
 }
 
 .portfolio-pictures {
