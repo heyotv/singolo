@@ -32,6 +32,11 @@ html {
   align-items: center;
 }
 
+.burger-menu,
+.burger-overlay {
+  display: none;
+}
+
 .logo {
   text-decoration: none;
 }
@@ -635,6 +640,14 @@ a {
   outline-color: #f0d8d9
 }
 
+.burger-menu {
+  width: 25px;
+  height: 20px;
+  position: absolute;
+  top: 26px;
+  left: 20px;
+}
+
 @media (max-width: 1019px) {
 
   .slider,
@@ -644,6 +657,14 @@ a {
 
   .slider .wrapper {
     padding: 0 27px 0 29px;
+  }
+
+  .slider {
+    border-bottom: solid 4.5px #ea676b;
+  }
+
+  .slider-click-color {
+  border-bottom: solid 4.5px #6884d0;
   }
 
   .previous-arrow,
@@ -663,6 +684,13 @@ a {
     height: 24vw;
     top: 17.3vw;
     right: 7.4vw;
+  }
+
+  .some-phones {
+    width: 48vw;
+    height: auto;
+    top: 5.4vw;
+    left: 23.5vw;
   }
 
   .services-list {
@@ -685,6 +713,7 @@ a {
 
   .about-us {
     padding-top: 52px;
+    border: none;
   }
 
   .employee:nth-child(2) {
@@ -725,5 +754,260 @@ a {
 
   .form-field:nth-child(4) {
     margin-bottom: 17px;
+  }
+}
+
+@media (max-width: 767px) {
+
+  .header {
+    height: 71px;
+    border: none;
+  }
+
+  .header-content {
+    justify-content: center;
+  }
+
+  .logo {
+    z-index: 10;
+  }
+
+  .logo h1 {
+    font-size: 1.969em;
+  }
+
+  .burger-menu {
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    z-index: 10;
+  }
+
+  .burger-menu::before,
+  .burger-menu::after {
+    position: absolute;
+    content: "";
+  }
+
+  .burger-menu::before {
+    top: 0;
+  }
+
+  .burger-menu::after {
+    bottom: 0;
+  }
+
+  .burger-menu span,
+  .burger-menu::before,
+  .burger-menu::after {
+    width: 100%;
+    height: 2.4px;
+    background-color: white;
+  }
+
+  .navigation {
+    position: absolute;
+    height: 100vh;
+    top: 0;
+    left: -100vw;
+    width: 278px;
+    background-color: #2d303a;
+    z-index: 9;
+    transition: 1s;
+  }
+
+  .navigation-list {
+    flex-direction: column;
+    position: absolute;
+    top: 232px;
+    left: 71px;
+    width: auto;
+  }
+
+  .navigation-item {
+    margin-bottom: 42px;
+    font-family: "LatoBold";
+    font-size: 2.4rem;
+  }
+
+  .slider .wrapper {
+    padding: 0 10px;
+  }
+
+  .slider {
+    border-bottom: solid 2.21px #ea676b;
+  }
+
+  .slider-click-color {
+    border-bottom: solid 2.21px #6884d0;
+  }
+
+  .previous-arrow,
+  .next-arrow {
+    width: 14px;
+    height: 25px;
+  }
+
+  .services {
+    border: none;
+  }
+
+  .services .wrapper {
+    padding: 0 24px 0 37px;
+  }
+
+  .services-wrapper {
+    padding: 28px 14px 0 0;
+  }
+
+  .services-description {
+    margin-top: 23px;
+  }
+
+  .service-item {
+    flex-basis: 100%;
+    justify-content: flex-start;
+    max-height: 104px;
+    margin-bottom: 30px;
+  }
+
+  .service-info-wrapper {
+    width: auto;
+    min-width: 220px;
+    margin-left: 20px;
+    margin-bottom: 0;
+  }
+
+  .portfolio {
+    border-bottom: 7.6px solid #323746;
+  }
+
+  .portfolio .wrapper {
+    padding: 0 30px;
+  }
+
+  .portfolio {
+    padding-top: 43px;
+    padding-bottom: 28px;
+    border: none;
+  }
+
+  .portfolio p {
+    margin-top: 20px;
+  }
+
+  .portfolio-tags {
+    margin-top: 20px;
+  }
+
+  .tag {
+    margin-right: 10px;
+  }
+  .portfolio-pictures {
+    margin-top: 25px;
+  }
+
+  .portfolio-picture {
+    flex-basis: 33%;
+  }
+
+  .portfolio-picture:nth-child(2n + 1) {
+    margin: 0 6.5px 14px 0;
+  }
+
+  .portfolio-picture:nth-child(2n) {
+    margin: 0 0 14px 6.5px;
+  }
+
+  .portfolio-picture:nth-child(n + 9) {
+    display: none;
+  }
+
+  .about-us {
+    padding-top: 35px;
+    padding-bottom: 11px;
+  }
+
+  .about-us .wrapper {
+    padding: 0 30px;
+  }
+
+  .about-us p {
+    margin-top: 20px;
+  }
+
+  .employees {
+    padding-top: 20px;
+  }
+
+  .employee {
+    flex-basis: 100%;
+  }
+  
+  .about-us .employees .employee {
+    margin: 0 0 34px;
+  }
+
+  .employee h3 {
+    margin-top: 17px;
+  }
+
+  .employee p {
+    margin-top: 8px;
+  }
+
+  .employee-contacts {
+    margin-top: 17px;
+  }
+
+  .contacts {
+    padding-top: 50px;
+    padding-bottom: 40px;
+    border: none;
+  }
+
+  .contacts .wrapper {
+    padding: 0 30px;
+  }
+
+  .contacts p {
+    margin-top: 20px;
+  }
+
+  .contact-form {
+    margin-top: 20px;
+    flex-direction: column;
+  }
+
+  .contact-form button {
+    width: 100%;
+  }
+
+  .form-field:nth-child(4) {
+    margin-bottom: 14px;
+  }
+
+  .form-info {
+    margin-top: 33px;
+  }
+
+  .form-info p {
+    margin-top: 6px;
+  }
+
+  .form-info div {
+    margin-top: 14px;
+  }
+
+  .form-info .contact {
+    margin-bottom: 4px;
+  }
+
+  .copyright {
+    display: none;
+  }
+
+  .footer-content {
+    justify-content: center;
   }
 }
