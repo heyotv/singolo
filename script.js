@@ -11,6 +11,8 @@ window.onload = function() {
   addPortfolioPicturesClickHandler();
 
   addFormButtonClickHandler();
+
+  addMobileMenuClickHandler();
 }
 
 const addMenuScrollHandler = () => {
@@ -19,9 +21,10 @@ const addMenuScrollHandler = () => {
     const cursorPosition = window.scrollY,
       sections = document.querySelectorAll('section'),
       links = document.querySelectorAll('.navigation-list a');
+      headerHeight = document.querySelector('.header').offsetHeight;
 
     sections.forEach(((item) => {
-      if (cursorPosition == 2581 || (item.offsetTop <= cursorPosition && (item.offsetTop + item.offsetHeight) > cursorPosition)) {
+      if (cursorPosition >= document.documentElement.offsetHeight - innerHeight || (item.offsetTop - headerHeight <= cursorPosition && (item.offsetTop + item.offsetHeight) - headerHeight > cursorPosition)) {
         links.forEach((a) => {
           a.classList.remove('navigation-item-selected');
           if (item.getAttribute('id') === a.getAttribute('href').substring(1)) {
@@ -286,4 +289,53 @@ const addCloseModalClickHandler = () => {
   })
 
 
+}
+
+const addMobileMenuClickHandler = () => {
+  const burger = document.querySelector('.burger-menu'),
+    burgerOverlay = document.querySelector('.burger-overlay'),
+    mobileMenu = document.querySelector('.navigation'),
+    links = document.querySelectorAll('.navigation-item'),
+    logo = document.querySelector('.logo');
+
+    let isMenuOpen = false;
+
+  const openMenu = () => {
+    mobileMenu.style.left = 0;
+    burgerOverlay.classList.remove('burger-overlay-display');
+    logo.classList.remove('logo-back');
+    logo.classList.add('logo-to-the-left');
+    isMenuOpen = true;
+  }
+  
+  const closeMenu = () => {
+    mobileMenu.style.left = -100 + 'vh';
+    burgerOverlay.classList.add('burger-overlay-display');
+    logo.classList.remove('logo-to-the-left');
+    logo.classList.add('logo-back');
+    isMenuOpen = false;
+  }
+
+  const mobileMenuClickHandler = () => {
+    if (isMenuOpen) {
+      burger.classList.remove('burger-rotate');
+      burger.classList.add('rotate');
+      closeMenu();
+    } else {
+      burger.classList.add('burger-rotate');
+      burger.classList.remove('rotate');
+      openMenu();
+    }
+  }
+
+  burgerOverlay.addEventListener('click', closeMenu);
+  
+  links.forEach((a) => {
+    a.addEventListener('click', () => {
+      burger.classList.remove('burger-rotate');
+      burger.classList.add('rotate');
+      closeMenu();
+    })
+  })
+  burger.addEventListener('click', mobileMenuClickHandler);
 }
