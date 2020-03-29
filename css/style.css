@@ -206,7 +206,6 @@ html {
 }
 
 .services {
-  height: 500px;
   box-sizing: border-box;
   background-color: #f2f2f2;
   border-bottom: 6px solid #ffffff;
@@ -214,6 +213,7 @@ html {
 
 .services-wrapper {
   padding-top: 68px;
+  padding-bottom: 27px;
 }
 
 .services-title {
@@ -280,9 +280,9 @@ html {
 }
 
 .portfolio {
-  height: 869px;
   box-sizing: border-box;
   padding-top: 68px;
+  padding-bottom: 47px;
   background-color: #2d303a;
   border-bottom: 6px solid #323746;
 }
@@ -337,7 +337,6 @@ html {
 }
 
 .portfolio-pictures {
-  height: 601px;
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
@@ -346,7 +345,10 @@ html {
 }
 
 .portfolio-picture {
-  margin-bottom: 20px;
+  margin: 10px;
+  flex: 1 0 20%;
+  height: auto;
+  min-width: 120px;
   cursor: pointer;
 }
 
@@ -366,11 +368,13 @@ html {
 
 .employees {
   display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
   padding-top: 45px;
 }
 
 .employee {
-  width: 303px;
+  flex: 1 0 25%;
 }
 
 .employee:nth-child(2) {
@@ -379,6 +383,11 @@ html {
 
 .employee:nth-child(3) {
   margin-left: 21px;
+}
+
+.employee img {
+  width: 100%;
+  height: auto;
 }
 
 .employee h3 {
@@ -492,6 +501,16 @@ html {
 form {
   width: 100%;
   margin-right: 20px;
+}
+
+.contact-form button {
+  width: 136px;
+  background-color: #fbc65f;
+  color: #886a30;
+  font-family: "LatoBold";
+  font-size: 14px;
+  text-transform: uppercase;
+  cursor: pointer;
 }
 
 .form-info h3 {
@@ -614,4 +633,97 @@ a {
   border: 1px solid #666d89;
   border-radius: 3px;
   outline-color: #f0d8d9
+}
+
+@media (max-width: 1019px) {
+
+  .slider,
+  .slider-content {
+    height: 58.8vw;;
+  }
+
+  .slider .wrapper {
+    padding: 0 27px 0 29px;
+  }
+
+  .previous-arrow,
+  .next-arrow {
+    top: 27.5vw;
+  }
+
+  .vertical-phone {
+    width: 24vw;
+    height: 48vw;
+    top: 5.4vw;
+    left: 7vw;
+  }
+
+  .horizontal-phone {
+    width: 48vw;
+    height: 24vw;
+    top: 17.3vw;
+    right: 7.4vw;
+  }
+
+  .services-list {
+    padding-right: 34px;
+    margin-top: 28px;
+  }
+
+  .service-item {
+    flex-basis: 34%;
+  }
+
+  .service-info-wrapper {
+    margin-left: 21px;
+    margin-bottom: 39.5px;
+  }
+
+  .portfolio-picture {
+    flex-basis: 25%;
+  }
+
+  .about-us {
+    padding-top: 52px;
+  }
+
+  .employee:nth-child(2) {
+    margin: 0 2%;
+  }
+
+  .employee:nth-child(3) {
+    margin: 0;
+  }
+
+  .employee h3 {
+    margin-top: 12px;
+  }
+
+  .employee p {
+    margin-top: 6px;
+  }
+
+  .employee-contacts {
+    margin-top: 13px;
+  }
+
+  form {
+    flex: 2 0;
+  }
+
+  .form-info {
+    flex: 1 0;
+  }
+
+  .form-field {
+    width: 100%;
+  }
+
+  .form-field:not(:last-child) {
+    margin-bottom: 12px;
+  }
+
+  .form-field:nth-child(4) {
+    margin-bottom: 17px;
+  }
 }
