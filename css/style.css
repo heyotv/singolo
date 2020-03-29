@@ -8,6 +8,10 @@ html {
   scroll-behavior: smooth;
 }
 
+body {
+  overflow-x: hidden;
+}
+
 .wrapper {
   max-width: 1020px;
   padding: 0 40px;
@@ -787,7 +791,7 @@ a {
   }
 
   .logo-to-the-left {
-    margin-right: 150px;
+    margin-right: 50%;
     transition: 0.5s;
   }
 
@@ -903,7 +907,7 @@ a {
 
   .service-info-wrapper {
     width: auto;
-    min-width: 220px;
+    min-width: 160px;
     margin-left: 20px;
     margin-bottom: 0;
   }
